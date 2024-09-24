@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -5,18 +7,20 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Poppins';
+    background: radial-gradient(circle, rgb(62, 94, 136) 0%, rgba(73,155,252,1) 100%);
 }
 
 .calculadora{
     width: 300px;
     margin: 50px auto;
     padding: 20px;
+    animation: digitando 2s;
     background-color: #107fff;
     border: 1px solid #d1d1d1;
     border-radius: 10px;
     box-shadow: 0 0 10px #0c0c0c;
+    margin-top: 200px;
 }
 
 h1 {
@@ -67,4 +71,30 @@ button:hover {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
+}
+
+.message{
+    width: 515px;
+    animation: digitando 3s steps(25), blink .4s infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    margin-top: -400px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%)
+    
+}
+
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    40%{
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 }
